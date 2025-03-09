@@ -1,4 +1,4 @@
-package com.campusconnect.campusconnect_backend.config;
+package com.campusconnect.campusconnect_backend.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
