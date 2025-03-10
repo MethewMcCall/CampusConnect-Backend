@@ -1,31 +1,26 @@
 package com.campusconnect.campusconnect_backend.entity;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
-@Setter
-@Getter
 @Entity
-@Table(name = "chat_messages")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ChatMessage {
 
-    // Getters and Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String senderId;
-    private String receiverId;
+    private String recipientId;
     private String content;
-    private LocalDateTime timestamp;
+    private String timestamp;
     private boolean seen;
-
-    public ChatMessage() {
-        this.timestamp = LocalDateTime.now();
-        this.seen = false;
-    }
-
 }
