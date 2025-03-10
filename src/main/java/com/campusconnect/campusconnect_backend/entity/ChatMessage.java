@@ -9,23 +9,23 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @Entity
-public class Chat {
+@Table(name = "chat_messages")
+public class ChatMessage {
 
+    // Getters and Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String senderId;
-    private String recipientId;
+    private String receiverId;
     private String content;
     private LocalDateTime timestamp;
     private boolean seen;
 
-    public Chat() {
+    public ChatMessage() {
         this.timestamp = LocalDateTime.now();
         this.seen = false;
     }
-
-    // Getters and Setters
 
 }
