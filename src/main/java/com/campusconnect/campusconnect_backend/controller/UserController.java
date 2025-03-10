@@ -14,6 +14,11 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserController {
 
+    @GetMapping("/profile")
+    public String getProfile() {
+        return "This is your profile.";
+    }
+
     private final UserService userService;
 
     @GetMapping("/all")
