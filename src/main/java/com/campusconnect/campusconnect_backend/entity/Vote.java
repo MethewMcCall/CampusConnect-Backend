@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "event_attendees")
-public class EventAttendee {
+@Table(name = "votes")
+public class Vote {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +20,8 @@ public class EventAttendee {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "event_id", nullable = false)
-    private Event event;
+    @JoinColumn(name = "poll_id", nullable = false)
+    private Poll poll;
 
-    private boolean checkedIn;
+    private int selectedOptionIndex;
 }
